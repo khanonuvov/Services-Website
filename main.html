@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Services</title>
+
+    <style>
+        *{
+            margin: 0;
+        }
+
+        body{
+            font-family: sans-serif;
+            background: white;
+            position: relative;
+            padding-bottom: 460px;
+            min-height: 100vh;
+        }
+
+        #nav-bar{
+            background: black;
+            text-align: center;
+        }
+        
+        .container ul{
+            list-style: none;
+            display: inline-flex;
+        }
+
+        .container ul li{
+            width: 120px;
+            padding: 2rem;
+        }
+        
+        .container ul li a{
+            text-decoration: none;
+            color: white;
+        }
+        .logo{
+            color: white;
+            padding: 1rem;
+            font-size: 40px;
+            margin-right: 100px;
+            margin-left: 50px;
+            background-color: rgb(5, 5, 5);
+            border-radius: 3px;
+            text-decoration:none;
+            cursor: pointer;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+        }
+        .container ul li:hover{
+            background: red;
+            border-radius: 3px;
+        }
+
+        .sub-menu ul{
+            display: none;
+        }
+        .sub-menu ul li a{
+            color: white;
+        }
+        .sub-menu ul li{
+            width: 80%;
+            height: 40%;
+        }
+        .container ul li:hover .sub-menu{
+            display: block;
+            position: absolute;
+            margin-top: 31px;
+            margin-left: -31px;
+        }
+        .container ul li:hover .sub-menu ul{
+            display: block;
+            background: black;
+            padding: 60px;
+        }
+
+
+        .main-menu{
+            display: grid;
+            grid-template-columns: 300px 300px 300px;
+            grid-template-rows: auto auto auto;
+            column-gap: 70px;
+            row-gap: 70px;
+            justify-content: center;
+        }
+
+        .card{
+            display: grid;
+            grid-template-columns: 300px;
+            grid-template-rows: 210px 210px ;
+            grid-template-areas: "image" "text";
+
+            font-family: roboto;
+            border-radius: 18px;
+            background: white;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+            text-align: center;
+
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+
+        .card-image1{
+            grid-area: image;
+            background:  url("img/salary.jpg");
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-size: cover;
+        }
+        .card-image2{
+            grid-area: image;
+            background:  url("img/house.jpg");
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-size: cover;
+        }
+        .card-image3{
+            grid-area: image;
+            background:  url("img/diabetes.jpg");
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-size: cover;
+        }
+        .card-image4{
+            grid-area: image;
+            background:  url("img/flight.jpg");
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-size: cover;
+        }
+        .card-image5{
+            grid-area: image;
+            background:  url("img/car.png");
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-size: cover;
+        }
+        .card-image6{
+            grid-area: image;
+            background:  url("img/hand.jpg");
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-size: cover;
+        }
+        
+        .card-image8{
+            grid-area: image;
+            background:  url("img/fake.png");
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-size: cover;
+        }
+        .card-image9{
+            grid-area: image;
+            background:  url("img/face.png");
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-size: cover;
+        }
+        .card-image10{
+            grid-area: image;
+            background:  url("img/spam.png");
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-size: cover;
+        }
+        .card-image11{
+            grid-area: image;
+            background:  url("img/covid.png");
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-size: cover;
+        }
+        .card-image12{
+            grid-area: image;
+            background:  url("img/cancer.jpg");
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-size: cover;
+        }
+        .card-image13{
+            grid-area: image;
+            background:  url("img/image-to-image.png");
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-size: cover;
+        }
+
+        .card-image14{
+            grid-area: image;
+            background:  url("img/more.jpeg");
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-size: cover;
+        }
+
+        .card-text{
+            grid-area: text;
+            padding: 30px;
+            font-family: sans-serif;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        .card:hover{
+            transform: scale(1.1,1.1);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6) ;
+        }
+
+
+
+        
+        footer{
+
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+            justify-content: space-between;
+            background: black;
+            line-height: 30px;
+            justify-content: center;
+            column-gap: 20px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+        .about-us{
+            color: white;
+            margin-top: 20px;
+        }
+        .about-us p{
+            margin-top: 30px;
+        }
+        .about-us ul li a {
+            text-decoration: none;
+            color: green;
+        }
+        .contact{
+            color: white;
+            margin-top: 20px;
+        }
+        .contact h1{
+            margin-bottom: 30px;
+        }
+        .social-links{
+            color: white;
+            margin-top: 20px;
+        }
+        .social-links h1{
+            margin-bottom: 30px;
+        }
+        .social-links p a{
+            text-decoration: none;
+            color: green;
+        }
+        .rights-deserved{
+            color: white;
+            grid-column: 2/4;
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+
+
+
+
+
+        #project{
+            color: black;
+            text-decoration: none;
+        }
+
+        .more-button{
+            color: white;
+            cursor: pointer;
+        }
+
+        .moreText{
+            display: none;
+        }
+        .sub-menu.show-more .moreText{
+            display: block;
+        }
+
+
+        .expand-homepage{
+            display: none;
+        }
+         
+        .main-menu.show-more .expand-homepage{
+            display: grid;
+            grid-template-columns: 300px 300px 300px;
+            column-gap: 70px;
+            row-gap: 70px;
+        }
+
+        .main-menu.show-more .expand{
+            margin-top: 50px;
+        }
+
+
+
+        .sub-menu-about-us{
+            display: none;
+            box-sizing: border-box;
+            height: 600px;
+            width: 90%;
+        }
+
+        .container ul li:hover .sub-menu-about-us{
+            display: grid;
+            grid-template-columns: 200px 200px 200px;
+            position: absolute;
+            margin-top: 50px;
+            margin-left: -870px;
+            column-gap: 80px;
+            background: white;
+            justify-content: center;
+            padding: 50px;
+            border-bottom: 2px solid black;
+        }
+
+        .owner-card{
+            display: grid;
+            grid-template-columns: 255px;
+            grid-template-rows: 190px 190px ;
+            grid-template-areas: "image" "text";
+            background: white;
+            text-align: center;
+            transition: 0.5s;
+            cursor: pointer;
+            
+        }
+
+        .owner-card-image1{
+            grid-area: image;
+            background:  url("img/youshuf.jpg");
+            background-size: cover;
+        }
+
+        .owner-card-image2{
+            grid-area: image;
+            background:  url("img/mahabub.jpg");
+            background-size: cover;
+        }
+
+        .owner-card-image3{
+            grid-area: image;
+            background:  url("img/arefin.jpg");
+            background-size: cover;
+        }
+
+        .owner-card-text{
+            grid-area: text;
+            padding: 30px;
+            color: black;
+            background: white;
+            text-align: left;
+        }
+        .owner-card-text p{
+            color: rgb(51, 50, 50);
+            margin-top: 12px;
+        }
+        .owner-card-text h4{
+            margin-top: 50px;
+            color: blue;
+        }
+
+
+
+
+        @media screen and (max-width: 480px){
+
+            .logo{
+                color: white;
+                margin-right: 100px;
+                margin-left: 120px;
+                font-family: sans-serif;
+            }
+            .container{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-right: 30px;
+            }
+            .container ul{
+                display: flex;
+                flex-direction: column;
+            }
+
+
+            .sub-menu{
+                display: none;
+            }
+            .sub-menu ul li{
+                width: 80%;
+                height: 40%;
+            }
+            .container ul li:hover .sub-menu{
+                display: block;
+                position: absolute;
+                margin-top: 31px;
+                margin-left: -150px;
+            }
+
+
+            .sub-menu-about-us{
+                display: none;
+                box-sizing: border-box;
+                height: 1200px;
+                width: 90%;
+            }
+
+            .container ul li:hover .sub-menu-about-us{
+                display: block;
+                position: absolute;
+                margin-top: 31px;
+                margin-left: -108px;
+                border: none;
+            }
+
+
+
+            .main-menu{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            } 
+
+            .card{
+                display: grid;
+                grid-template-columns: 250px;
+                grid-template-rows: 180px 180px ;
+            }
+
+            .expand{
+                margin-bottom: 600px;
+            }
+
+            .expand-homepage{
+                display: none;
+            }
+            
+            .main-menu.show-more .expand-homepage{
+                display: flex;
+                flex-direction: column;
+            }
+
+            .main-menu.show-more .expand{
+                margin-top: 50px;
+                margin-bottom: 600px;
+            }
+
+            footer{
+
+                display: flex;
+                flex-direction: column;
+            }
+            .about-us, .social-links, .contact, .rights-deserved{
+                padding: 30px;
+            }
+        }
+
+
+
+        @media screen and (min-width: 481px) and (max-width: 1199px){
+
+            .logo{
+                color: white;
+                margin-right: 100px;
+                margin-left: 120px;
+                font-family: sans-serif;
+            }
+            .container{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-right: 30px;
+            }
+            .container ul{
+                display: flex;
+                flex-direction: column;
+            }
+
+
+            .sub-menu{
+                display: none;
+            }
+            .sub-menu ul li{
+                width: 80%;
+                height: 40%;
+            }
+            .container ul li:hover .sub-menu{
+                display: block;
+                position: absolute;
+                margin-top: 31px;
+                margin-left: -150px;
+            }
+             
+            .sub-menu-about-us{
+                display: none;
+                box-sizing: border-box;
+                height: 600px;
+                width: 90%;
+            }
+
+            .container ul li:hover .sub-menu-about-us{
+                display: grid;
+                grid-template-columns: 200px 200px 200px;
+                position: absolute;
+                margin-top: 50px;
+                margin-left: -410px;
+                column-gap: 80px;
+                background: white;
+                justify-content: center;
+                padding: 50px;
+                border-bottom: none;
+            }
+
+
+            .main-menu{
+                display: grid;
+                grid-template-columns: 300px 300px;
+                align-items: center;
+                column-gap: 150px;
+                row-gap: 150px;
+            } 
+
+            .card{
+                display: grid;
+                grid-template-columns: 300px;
+                grid-template-rows: 220px 220px ;
+            }
+
+            .expand{
+                margin-bottom: 550px;
+            }
+
+            .expand-homepage{
+                display: none;
+            }
+
+            .main-menu.show-more .expand-homepage{
+                display: grid;
+                grid-template-columns: 300px 300px;
+                column-gap: 150px;
+                row-gap: 150px;
+            }
+
+            .main-menu.show-more .expand{
+                margin-top: 150px;
+                margin-bottom: 550px;
+            }
+
+            footer{
+
+                display: flex;
+                flex-direction: column;
+            }
+            .about-us, .social-links, .contact, .rights-deserved{
+                padding: 30px;
+            }
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    
+    <nav id="nav-bar">
+        <div class="container">
+            <a class="logo" href="main.html">Dynamic Services</a>
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="#">Services</a>
+                    <div class="sub-menu">
+                        <ul>
+                            <li> <a href="project-1.html">Salary Prediction</a></li>
+                            <li> <a href="project-2.html">House Price Prediction</a></li>
+                            <li> <a href="project-3.html">Early Stage Diabetes Risk Prediction</a></li>
+                            <li> <a href="project-4.html">Flight Fare Prediction</a></li>
+                            <li> <a href="project-5.html">Car Price Prediction</a></li>
+                            <li> <a href="project-6.html">Hand Digit Recognition</a></li>
+                            <div class="moreText">
+                                <li> <a href="project-7.html">Fake News Detection</a></li>
+                                <li> <a href="project-8.html">Face Recognition</a></li>
+                                <li> <a href="project-9.html">Spam & Not spam Email Detection</a></li>
+                                <li> <a href="project-10.html">Covid-19 Detection</a></li>
+                                <li> <a href="project-11.html">Cancer Detection</a></li>
+                                <li> <a href="project-12.html">Image to Image Translation</a></li>
+                            </div>
+                            <li class="more-button">More</li>
+                            
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">About us</a>
+                    <div class="sub-menu-about-us">
+                        <a href="youshuf.html">
+                            <div class="owner-card">
+                                <div class="owner-card-image1"></div>
+                                <div class="owner-card-text">
+                                    <h3>MD Youshuf Khan</h3>
+                                    <p>Chief Excutive Officer</p>
+                                    <h4>View Bio</h4>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="mahabub.html">
+                            <div class="owner-card">
+                                <div class="owner-card-image2"></div>
+                                <div class="owner-card-text">
+                                    <h3>MD Mahabubur</h3>
+                                    <p>Chief Administrative Officer</p>
+                                    <h4>View Bio</h4>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="arefin.html">
+                            <div class="owner-card">
+                                <div class="owner-card-image3"></div>
+                                <div class="owner-card-text">
+                                    <h3>Nazmul Arefin</h3>
+                                    <p>Chief Financial Officer</p>
+                                    <h4>View Bio</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li><a href="contact-us.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <main>
+
+        <div class="main-menu">
+            <a id="project" href="project-1.html">
+                <div class="card">
+                    <div class="card-image1"></div>
+                    <div class="card-text">
+                        <h1>Salary Prediction</h1>
+                    </div>
+                </div>
+            </a>
+    
+            <a id="project" href="project-2.html">
+                <div class="card">
+                    <div class="card-image2"></div>
+                    <div class="card-text">
+                        <h1>House Price Prediction</h1>
+                    </div>
+                </div>
+            </a>
+            
+            <a id="project" href="project-3.html">
+                <div class="card">
+                    <div class="card-image3"></div>
+                    <div class="card-text">
+                        <h1>Early Stage Diabetes Risk Prediction</h1>
+                    </div>
+                </div>
+            </a>
+    
+            <a id="project" href="project-4.html">
+                <div class="card">
+                    <div class="card-image4"></div>
+                    <div class="card-text">
+                        <h1>Flight Fare Prediction</h1>
+                    </div>
+                </div>
+            </a>
+    
+            <a id="project" href="project-5.html">
+                <div class="card">
+                    <div class="card-image5"></div>
+                    <div class="card-text">
+                        <h1>Car Price Prediction</h1>
+                    </div>
+                </div>
+            </a>
+    
+            <a id="project" href="project-6.html">
+                <div class="card">
+                    <div class="card-image6"></div>
+                    <div class="card-text">
+                        <h1>Hand Written Digit Recognition</h1>
+                    </div>
+                </div>
+            </a>
+
+            <div>
+                <div class="expand-homepage">
+                    <a id="project" href="project-7.html">
+                        <div class="card">
+                            <div class="card-image8"></div>
+                            <div class="card-text">
+                                <h1>Fake News Detection</h1>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a id="project" href="project-8.html">
+                        <div class="card">
+                            <div class="card-image9"></div>
+                            <div class="card-text">
+                                <h1>Face Recognition</h1>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a id="project" href="project-9.html">
+                        <div class="card">
+                            <div class="card-image10"></div>
+                            <div class="card-text">
+                                <h1>Spam & Not spam Email Detection</h1>
+                            </div>
+                        </div>
+                    </a>
+                    
+            
+                    <a id="project" href="project-10.html">
+                        <div class="card">
+                            <div class="card-image11"></div>
+                            <div class="card-text">
+                                <h1>Covid-19 Detection</h1>
+                            </div>
+                        </div>
+                    </a>
+            
+                    <a id="project" href="project-11.html">
+                        <div class="card">
+                            <div class="card-image12"></div>
+                            <div class="card-text">
+                                <h1>Cancer Detection</h1>
+                            </div>
+                        </div>
+                    </a>
+            
+                    <a id="project" href="project-12.html">
+                        <div class="card">
+                            <div class="card-image13"></div>
+                            <div class="card-text">
+                                <h1>Image to Image Translation</h1>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="expand">
+                    <div class="card">
+                        <div class="card-image14"></div>
+                        <div class="card-text">
+                            <h1>More</h1>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            
+
+
+        </div>
+        
+    </main>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer>
+        <div class="about-us">
+            <h1>About us</h1>
+            <p>The founder of Dynamic Services Company are
+               MD. Youshuf Khan Rakib, MD Mahabubur 
+               Rahman & Nazmul Arefin. Here are the details of all of them..</p>
+               <ul>
+                   <li><a href="youshuf.html">MD Youshuf Khan Rakib</a></li>
+                   <li><a href="arefin.html">MD Mahabubur Rahman</a></li>
+                   <li><a href="arefin.html">Nazmul Arefin</a></li>
+               </ul>
+            <p><a href=""></a></p>
+        </div>
+        <div class="contact">
+            <h1>Contact</h1>
+            <p></p>
+            <p>Phone: +8801708972220</p>
+            <p>Email: khanushuf4619@yahoo.com</p>
+            <p>Address: 17 International Dormitory, Southwest University
+                of Science & Technology, Mianyang, Sichuan, China 
+            </p>
+        </div>
+        <div class="social-links">
+            <h1>Social Links</h1>
+            <p><a href="#">Facebook</a></p>
+            <p><a href="#">Instagram</a></p>
+            <p><a href="#">Youtube</a></p>
+        </div>
+        <div class="rights-deserved">
+            <p><script>document.write(new Date().getFullYear());</script> &copy; Dynamic Services All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="javascript.js"></script>
+    
+</body>
+</html>

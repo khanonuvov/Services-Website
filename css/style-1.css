@@ -1,0 +1,265 @@
+.salary-h1 
+{
+    text-align: center;
+    color: lightgreen;
+}
+
+.description
+{
+    text-align: center;
+    margin-top: 10px;
+}
+
+#submit-form
+{
+    color:#666666;
+    background-color: #f3faf9;
+    width: 460px;
+    height: 450px;
+    border: solid 1px silver;
+    box-shadow: -6px 6px 6px silver;
+    padding: 0 20px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -o-border-radius: 6px;
+    -ms-border-radius: 6px;
+
+    position: 0px;
+    margin:auto;
+    left:0; right:0;
+    top:0; bottom:0;  
+}
+
+.formname
+{
+    text-align: center;
+    color: lightgreen;
+}
+
+.formname h2{
+    padding: 20px;
+}
+
+
+main
+{
+    height: calc(96vh);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    align-items: center;
+    margin-top: 100px;
+}
+
+
+.salary-container
+{
+    width: 90vw;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap :0rem;
+    padding: 0 0rem;
+}
+
+.img
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.img img
+{
+    width: 500px;
+}
+
+.field-area
+{
+    height: 40px;
+    line-height: 40px;
+}
+
+#submit-form label
+{
+    display: inline-block;
+    width: 80px;
+}
+
+.textfield
+{
+    height: 30px;
+    border: solid 1px silver;
+    border-radius: 3px;
+    padding: 0 6px;
+}
+
+input.textfield
+{
+    width: 360px;
+}
+
+select.textfield
+{
+    width: 375px;
+}
+
+input[type="submit"], input[type="reset"]
+{
+    height: 28px;
+    margin: 3px 0;
+    
+    display: block;
+    width: 100%;
+
+    border: solid 1px silver;
+    border-radius: 3px;
+}
+
+input[type="submit"]:hover
+{
+    background-color: lightgreen;
+    font-weight: bolder;
+    color: black;
+    
+}
+
+input[type="reset"]:hover
+{
+    background-color: #f05749;
+    font-weight: bolder;
+    color: white;
+}
+
+
+@media screen and (max-width: 480px){
+    main{
+        display: flex;
+        flex-direction: column;
+        height: 250vh;
+    }
+
+    .salary-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .field-area{
+        display: grid;
+        grid-template-columns: 85px 100px;
+    }
+
+    input.textfield
+    {
+        width: 200px;
+    }
+
+    select.textfield
+    {
+        width: 200px;
+    }
+
+    input[type="submit"], input[type="reset"]
+    {
+        height: 28px;
+        margin: 3px 0;
+        
+        display: block;
+        width: 285px;
+
+        border: solid 1px silver;
+        border-radius: 3px;
+    }
+
+    #submit-form{
+        width: 290px;
+    }
+
+    .salary-h1 
+    {
+        font-family: sans-serif;
+        color: rgb(100, 226, 100);
+        padding-left: 30px;
+        text-align: left;
+    }
+
+    .description
+    {
+        font-family: sans-serif;
+        color: black;
+        line-height: 25px;
+        text-align: left;
+        padding-left: 30px ;
+    }
+     
+}
+
+@media screen and (min-width: 481px) and (max-width:1199px){
+
+    main{
+        display: flex;
+        flex-direction: column;
+        height: 290vh;
+    }
+
+    .salary-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .field-area{
+        display: grid;
+        grid-template-columns: 200px 400px;
+    }
+
+    input.textfield
+    {
+        width: 400px;
+    }
+
+    select.textfield
+    {
+        width: 400px;
+    }
+
+    input[type="submit"], input[type="reset"]
+    {
+        height: 28px;
+        margin: 3px 0;
+        
+        display: block;
+        width: 600px;
+
+        border: solid 1px silver;
+        border-radius: 3px;
+    }
+
+    #submit-form{
+        width: 650px;
+    }
+
+    .salary-h1 
+    {
+        font-family: sans-serif;
+        color: rgb(100, 226, 100);
+        padding-left: 30px;
+        text-align: left;
+    }
+
+    .description
+    {
+        font-family: sans-serif;
+        color: black;
+        line-height: 25px;
+        text-align: left;
+        padding-left: 30px ;
+    }
+
+    .img{
+        justify-content: center;
+    }
+
+    .img img
+    {
+        width: 650px;
+    }
+}

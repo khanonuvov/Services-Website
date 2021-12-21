@@ -1,0 +1,294 @@
+.Flight-h1 
+{
+    text-align: center;
+    
+    color: #78419c;
+}
+
+.description
+{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+#submit-form
+{
+    color:#666666;
+    background-color: #78cadf;
+    width: 460px;
+    height: 540px;
+    border: solid 1px silver;
+    box-shadow: -6px 6px 6px silver;
+    padding: 0 20px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -o-border-radius: 6px;
+    -ms-border-radius: 6px;
+   
+    position: 0px;
+    margin:auto;
+    left:0; right:0;
+    top:0; bottom: 0px;  
+}
+
+.formname
+{
+    text-align: center;
+    color: #42409b;
+}
+
+.formname h2{
+    padding: 20px;
+}
+
+
+main
+{
+    height: calc(96vh);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+
+.Flight-container
+{
+    width: 90vw;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap :0rem;
+    padding: 0 0rem;
+}
+
+.img
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.img img
+{
+    width: 600px;
+}
+
+.field-area
+{
+    height: 38px;
+    line-height: 40px;
+}
+
+#submit-form label
+{
+    display: inline-block;
+    width: 80px;
+    color: black;
+    
+}
+
+.textfield
+{
+    height: 30px;
+    border: solid 1px silver;
+    border-radius: 3px;
+    padding: 0 6px;
+}
+
+input.textfield
+{
+    width: 360px;
+}
+
+select.textfield
+{
+    width: 375px;
+}
+
+.textfield2
+{
+    height: 30px;
+    border: solid 1px silver;
+    border-radius: 3px;
+    padding: 0 6px;
+    width: 150px;
+}
+.textfield3
+{
+    height: 30px;
+    border: solid 1px silver;
+    border-radius: 3px;
+    padding: 0 6px;
+    width: 143px;
+}
+
+
+input[type="submit"], input[type="reset"]
+{
+    height: 28px;
+    margin: 3px 0;
+    
+    display: block;
+    width: 100%;
+
+    border: solid 1px silver;
+    border-radius: 3px;
+}
+
+input[type="submit"]:hover
+{
+    background-color: lightgreen;
+    font-weight: bolder;
+    color: black;
+    
+}
+
+input[type="reset"]:hover
+{
+    background-color: #f05749;
+    font-weight: bolder;
+    color: white;
+}
+
+@media screen and (max-width: 480px) {
+    main{
+        display: flex;
+        flex-direction: column;
+        height: 300vh;
+    }
+
+    .Flight-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .field-area{
+        display: grid;
+        grid-template-columns: 85px 65px 65px 65px;
+    }
+
+    input.textfield
+    {
+        width: 177px;
+    }
+
+    select.textfield
+    {
+        width: 100px;
+    }
+    #style.textfield{
+        width: 190px;
+    }
+
+    select.textfield2{
+         width: 60px;
+    }
+
+    input[type="submit"], input[type="reset"]
+    {
+        height: 28px;
+        margin: 3px 0;
+        
+        display: block;
+        width: 320px;
+
+        border: solid 1px silver;
+        border-radius: 3px;
+        margin-left: -20px;
+    }
+
+    #submit-form{
+        width: 280px;
+        height: 480px;
+    }
+    .Flight-h1 
+    {
+        font-family: sans-serif;
+        padding-left: 30px;
+        text-align: left;
+    }
+
+    .description
+    {
+        font-family: sans-serif;
+        color: black;
+        line-height: 25px;
+        text-align: left;
+        padding-left: 30px ;
+    }
+
+    .img{
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width:1199px){
+    main{
+        display: flex;
+        flex-direction: column;
+        height: 250vh;
+    }
+
+    .Flight-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .field-area{
+        display: grid;
+        grid-template-columns: 200px 400px;
+    }
+
+    input.textfield
+    {
+        width: 400px;
+    }
+
+    select.textfield
+    {
+        width: 400px;
+    }
+
+    input[type="submit"], input[type="reset"]
+    {
+        height: 28px;
+        margin: 3px 0;
+        
+        display: block;
+        width: 600px;
+
+        border: solid 1px silver;
+        border-radius: 3px;
+    }
+
+    #submit-form{
+        width: 650px;
+    }
+
+    .Flight-h1 
+    {
+        padding-left: 30px;
+        text-align: left;
+    }
+
+    .description
+    {
+        font-family: sans-serif;
+        color: black;
+        line-height: 25px;
+        text-align: left;
+        padding-left: 30px ;
+    }
+
+    .img{
+        justify-content: center;
+    }
+
+    .img img
+    {
+        width: 650px;
+    }
+}

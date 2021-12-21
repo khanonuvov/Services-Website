@@ -1,0 +1,103 @@
+.project-container{
+    display: grid;
+    grid-template-columns: 500px 500px;
+    justify-content: center;
+    align-items: center;
+    padding: 200px;
+}
+
+.project h1{
+    font-family: sans-serif;
+    color: red;
+    padding: 30px;
+}
+.project p{
+    font-family: sans-serif;
+    color: black;
+    line-height: 25px;
+    text-align: left;
+    padding-left: 30px ;
+}
+
+.button-file{
+    padding: 100px;
+}
+
+#custom-button{
+    padding: 10px;
+    color: white;
+    background-color: black;
+    border: 2px solid green;
+    border-radius: 5px;
+    
+}
+
+
+#submit-button{
+    padding: 10px;
+    color: white;
+    background-color: black;
+    border: 2px solid green;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+#custom-button, #submit-button:hover{
+    background-color: green;
+}
+
+@media screen and (max-width: 480px){
+
+    .project-container{
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+    }
+    
+    .button-file{
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    #custom-button{
+        width: 250px;
+        margin-bottom: 10px;
+    }
+    #submit-button{
+        width: 250px;
+        margin-bottom: 600px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width:1199px){
+
+    .project-container{
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+    }
+    
+    .button-file{
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    #custom-button{
+        width: 250px;
+        margin-bottom: 10px;
+    }
+    #submit-button{
+        width: 250px;
+        margin-bottom: 530px;
+    }
+
+
+    .project h1{
+        text-align: center;
+    }
+    .project p{
+        text-align: center;
+    }
+}

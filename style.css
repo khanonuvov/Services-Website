@@ -1,0 +1,340 @@
+*{
+    margin: 0;
+}
+
+body{
+    font-family: sans-serif;
+    background: white;
+    position: relative;
+    padding-bottom: 460px;
+    min-height: 100vh;
+}
+#nav-bar{
+    background: black;
+    text-align: center;
+}
+.container ul{
+    list-style: none;
+    display: inline-flex;
+    
+}
+
+.container ul li{
+    width: 120px;
+    padding: 2rem;
+}
+
+.container ul li a{
+    text-decoration: none;
+    color: white;
+}
+.logo{
+    color: white;
+    padding: 1rem;
+    font-size: 40px;
+    margin-right: 100px;
+    margin-left: 50px;
+    font-family: sans-serif;
+    background-color: rgb(5, 5, 5);
+    border-radius: 3px;
+    text-decoration:none;
+    cursor: pointer;
+}
+.container{
+    display: flex;
+}
+.container ul li:hover{
+    background: red;
+    border-radius: 3px;
+}
+
+.sub-menu ul{
+    display: none;
+}
+.sub-menu ul li a{
+    color: white;
+}
+.sub-menu ul li{
+    width: 80%;
+    height: 40%;
+}
+.container ul li:hover .sub-menu{
+    display: block;
+    position: absolute;
+    background: green;
+    margin-top: 31px;
+    margin-left: -31px;
+}
+.container ul li:hover .sub-menu ul{
+    display: block;
+    background: black;
+    padding: 60px;
+}
+
+
+footer{
+
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: space-between;
+    background: black;
+    line-height: 30px;
+    justify-content: center;
+    column-gap: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.about-us{
+    color: white;
+    margin-top: 20px;
+}
+.about-us p{
+    margin-top: 30px;
+}
+.about-us ul li a {
+    text-decoration: none;
+    color: green;
+}
+.contact{
+    color: white;
+    margin-top: 20px;
+}
+.contact h1{
+    margin-bottom: 30px;
+}
+.social-links{
+    color: white;
+    margin-top: 20px;
+}
+.social-links h1{
+    margin-bottom: 30px;
+}
+.social-links p a{
+    text-decoration: none;
+    color: green;
+}
+.rights-deserved{
+    color: white;
+    grid-column: 2/4;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+#project{
+    color: black;
+    text-decoration: none;
+}
+
+.more-button{
+    color: white;
+    cursor: pointer;
+}
+
+.moreText{
+    display: none;
+}
+.sub-menu.show-more .moreText{
+    display: block;
+}
+
+
+
+
+.sub-menu-about-us{
+    display: none;
+    box-sizing: border-box;
+    height: 600px;
+    width: 90%;
+}
+
+.container ul li:hover .sub-menu-about-us{
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: -870px;
+    column-gap: 80px;
+    background: white;
+    justify-content: center;
+    padding: 50px;
+    border-bottom: 2px solid black;
+}
+
+.owner-card{
+    display: grid;
+    grid-template-columns: 255px;
+    grid-template-rows: 190px 190px ;
+    grid-template-areas: "image" "text";
+    background: white;
+    text-align: center;
+    transition: 0.5s;
+    cursor: pointer;
+    
+}
+
+.owner-card-image1{
+    grid-area: image;
+    background:  url("img/youshuf.jpg");
+    background-size: cover;
+}
+
+.owner-card-image2{
+    grid-area: image;
+    background:  url("img/mahabub.jpg");
+    background-size: cover;
+}
+
+.owner-card-image3{
+    grid-area: image;
+    background:  url("img/arefin.jpg");
+    background-size: cover;
+}
+
+.owner-card-text{
+    grid-area: text;
+    padding: 30px;
+    color: black;
+    background: white;
+    text-align: left;
+}
+.owner-card-text p{
+    color: rgb(51, 50, 50);
+    margin-top: 12px;
+}
+.owner-card-text h4{
+    margin-top: 50px;
+    color: blue;
+}
+
+
+
+@media screen and (max-width: 480px){
+
+    .logo{
+        color: white;
+        margin-right: 100px;
+        margin-left: 120px;
+        font-family: sans-serif;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 30px;
+    }
+    .container ul{
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .sub-menu{
+        display: none;
+    }
+    .sub-menu ul li{
+        width: 80%;
+        height: 40%;
+    }
+    .container ul li:hover .sub-menu{
+        display: block;
+        position: absolute;
+        margin-top: 31px;
+        margin-left: -150px;
+    }
+
+    .sub-menu-about-us{
+        display: none;
+        box-sizing: border-box;
+        height: 1200px;
+        width: 90%;
+    }
+
+    .container ul li:hover .sub-menu-about-us{
+        display: block;
+        position: absolute;
+        margin-top: 31px;
+        margin-left: -108px;
+        border: none;
+    }
+
+
+    footer{
+
+        display: flex;
+        flex-direction: column;
+    }
+    .about-us, .social-links, .contact, .rights-deserved{
+        padding: 30px;
+    }
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 1199px) {
+    .logo{
+        color: white;
+        margin-right: 100px;
+        margin-left: 120px;
+        font-family: sans-serif;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 30px;
+    }
+    .container ul{
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .sub-menu{
+        display: none;
+    }
+    .sub-menu ul li{
+        width: 80%;
+        height: 40%;
+    }
+    .container ul li:hover .sub-menu{
+        display: block;
+        position: absolute;
+        margin-top: 31px;
+        margin-left: -150px;
+    }
+
+    .sub-menu-about-us{
+        display: none;
+        box-sizing: border-box;
+        height: 600px;
+        width: 90%;
+    }
+
+    .container ul li:hover .sub-menu-about-us{
+        display: grid;
+        grid-template-columns: 200px 200px 200px;
+        position: absolute;
+        margin-top: 50px;
+        margin-left: -410px;
+        column-gap: 80px;
+        background: white;
+        justify-content: center;
+        padding: 50px;
+        border-bottom: none;
+    }
+
+
+    footer{
+
+        display: flex;
+        flex-direction: column;
+    }
+    .about-us, .social-links, .contact, .rights-deserved{
+        padding: 30px;
+    }
+}

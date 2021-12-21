@@ -1,0 +1,119 @@
+.project-container{
+    display: grid;
+    grid-template-columns: 500px 500px;
+    justify-content: center;
+    align-items: center;
+    padding: 200px;
+}
+
+.project h1{
+    font-family: sans-serif;
+    color: red;
+    padding: 30px;
+}
+.project p{
+    font-family: sans-serif;
+    color: black;
+    line-height: 25px;
+    text-align: left;
+    padding-left: 30px ;
+}
+
+.button-file{
+    padding: 100px;
+}
+
+textarea{
+    min-height: 150px;
+    min-width: 400px;
+}
+
+.field{
+    width: 100%;
+    border: 2px solid rgba(0, 0, 0, 0);
+    outline: none;
+    background-color: rgba(230, 230, 230, 0.6);
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 22px;
+    transition: .3s;
+}
+
+.field:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.field:focus{
+    border: 2px solid rgba(30,85,250,0.47);
+    background-color: #fff;
+}
+
+#submit-button{
+    padding: 10px;
+    color: white;
+    background-color: green;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+#submit-button:hover{
+    background-color: red;
+}
+
+@media screen and (max-width: 480px){
+
+    .project-container{
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .button-file{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        margin-top: 30px;
+    }
+    
+    textarea{
+        min-height: 150px;
+        min-width: 200px;
+    }
+     
+    .submit-button{
+        margin-bottom: 600px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width:1199px){
+
+    .project-container{
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .button-file{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        margin-top: 30px;
+    }
+    
+    textarea{
+        min-width: 380px;
+    }
+     
+    .submit-button{
+        margin-bottom: 600px;
+    }
+
+
+    .project h1{
+        text-align: center;
+    }
+    .project p{
+        text-align: center;
+    }
+}

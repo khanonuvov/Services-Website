@@ -1,0 +1,68 @@
+main{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    column-gap: 10px;
+    row-gap: 10px;
+    justify-content: center;
+    padding: 30px;
+}
+
+.projects{
+    margin-top: 40px;
+    color: red;
+    text-align: center;
+    grid-column: 1/4;
+    padding: 15px;
+    font-weight: bold;
+    background: black;
+}
+.card-body{
+    padding: 20px;
+    background:  rgb(200, 222, 222);
+
+}
+.card-title{
+    font-size: 20px;
+}
+.submit-option{
+    text-align: center;
+    grid-column: 1/4;
+}
+.submit-button{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+.submit-button:hover{
+    color: green;
+    font-weight: bold;
+}
+
+
+
+@media screen and (max-width: 480px){
+    main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+      
+    .submit-button{
+        margin-bottom: 630px;
+    }
+     
+}
+
+@media screen and (min-width: 481px) and (max-width:1199px){
+
+    main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+      
+    .submit-button{
+        margin-bottom: 550px;
+    }
+}
